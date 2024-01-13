@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endroof Safety Report</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Endroof Safety Report</h1>
+        <div class="report-form">
+            <!-- Existing form fields -->
+            <label for="siteName">Site Name:</label>
+            <input type="text" id="siteName" name="siteName" required>
+
+            <label for="projectName">Project Name:</label>
+            <input type="text" v-model="formData.projectName" required>
+
+            <label for="nameOfPersonSubmittingReport">Name Of Person Submitting Report:</label>
+            <input type="text" v-model="formData.nameOfPersonSubmittingReport" required>
+
+            <label for="dateSubmitted">Date Report is submitted:</label>
+            <input type="date" v-model="formData.dateSubmitted" required>
+
+            <label for="tasks">Tasks on site for the day:</label>
+            <textarea v-model="formData.tasks" required></textarea>
+
+            <label for="weather">Weather:</label>
+            <select v-model="formData.weather" required>
+                <option value="">Select Weather</option>
+                <option value="rainy">Rainy</option>
+                <option value="hot">Hot</option>
+                <option value="windy">Windy</option>
+                <option value="cloudy">Cloudy</option>
+                <option value="sunny">Sunny</option>
+            </select>
+
+            <label for="fatalityCase">Fatality Case (Fatal):</label>
+            <input type="number" v-model="formData.fatalityCase" required>
+
+            <label for="lostWorkdayCase">Lost Workday Case (LWC):</label>
+            <input type="number" v-model="formData.lostWorkdayCase" required>
+
+            <label for="restrictedWorkdayCase">Restricted Workday Case (RWC):</label>
+            <input type="number" v-model="formData.restrictedWorkdayCase" required>
+
+            <label for="medicalTreatmentCase">Medical Treatment Case (MTC):</label>
+            <input type="number" v-model="formData.medicalTreatmentCase" required>
+
+            <label for="firstAidCase">First Aid Case (FAC):</label>
+            <input type="number" v-model="formData.firstAidCase" required>
+
+            <label for="propertyDamage">Property Damage (PD):</label>
+            <input type="number" v-model="formData.propertyDamage" required>
+
+            <label for="nearMiss">Near Miss (NM):</label>
+            <input type="number" v-model="formData.nearMiss" required>
+
+            <label for="motorVehicleAccident">Motor Vehicle Accident (MVA):</label>
+            <input type="number" v-model="formData.motorVehicleAccident" required>
+
+            <label for="fireIncident">Fire Incident (FI):</label>
+            <input type="number" v-model="formData.fireIncident" required>
+
+            <label for="describeIncidentsAccidentsNearmisses">Describe Incidents Accidents Nearmisses:</label>
+            <textarea v-model="formData.describeIncidentsAccidentsNearmisses" required></textarea>
+
+            <label for="totalRecordableInjuries">Total Number of Recordable Injuries:</label>
+            <input type="number" v-model="formData.totalRecordableInjuries" required>
+
+            <label for="numberLostWorkDays">Number of Lost Work Days:</label>
+            <input type="number" v-model="formData.numberLostWorkDays" required>
+
+            <label for="numberRestrictedDays">Number of Restricted/ Job Transfer Days:</label>
+            <input type="number" v-model="formData.numberRestrictedDays" required>
+
+            <label for="totalDaysLost">Total Number of Days Lost:</label>
+            <input type="number" v-model="formData.totalDaysLost" required>
+
+            <label for="safeManDays">Safe Man Days:</label>
+            <input type="number" v-model="formData.safeManDays" required>
+
+            <label for="jsaDone">JSA done:</label>
+            <input type="text" v-model="formData.jsaDone" required>
+
+            <label for="debrisGenerated">Debris generated for re-use in kilograms:</label>
+            <input type="number" v-model="formData.debrisGenerated" required>
+
+            <label for="otherWasteGenerated">Other waste generated in kilograms:</label>
+            <input type="number" v-model="formData.otherWasteGenerated" required>
+
+            <label for="metallicWaste">Metallic waste generated in kilograms:</label>
+            <input type="text" v-model="formData.metallicWaste" required>
+
+            <!-- Add other input fields for additional data -->
+
+            <label for="picture">Attach Picture:</label>
+            <input type="file" id="picture" name="picture" accept="image/*">
+
+<form id="report-form" action="/submit-report" method="post">
+    <!-- Your form fields -->
+    <button type="submit">Submit Report</button>
+</form>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
